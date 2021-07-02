@@ -1,0 +1,22 @@
+{
+  "name": "hackday",
+  "version": "1.0.0",
+  "description": "Boilerplate for hackday",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "William Nordenstad",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "create-react-app": "^4.0.3",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
