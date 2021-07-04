@@ -14,10 +14,13 @@ app.get('/leagues/:id', (req, res) => {
         "x-auth-token" : apiKey,
         "Accept" : "application/json",
         "Content-Type" : "application/json",
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true,
     }
   })
     .then(res => res.json())
     .then(data => res.send(data.teams))
+    .catch(err => console.log(err));
 });
 
 app.get('/standings/:id', (req, res) => {
@@ -28,41 +31,33 @@ app.get('/standings/:id', (req, res) => {
         "x-auth-token" : apiKey,
         "Accept" : "application/json",
         "Content-Type" : "application/json",
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true,
     }
   })
     .then(res => res.json())
     .then(data => res.send(Object.values({...data.standings})))
+    .catch(err => console.log(err));
 });
 
-// {Object.values({...data.standings})[3]}
+app.get('/matches/:id/:day', (req, res) => {
+  fetch(`${path}/competitions/${req.params.id}/matches?matchday=${req.params.day}`, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+        "x-auth-token" : apiKey,
+        "Accept" : "application/json",
+        "Content-Type" : "application/json",
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true,
+    }
+  })
+    .then(res => res.json())
+    .then(data => res.send(Object.values({...data.matches})))
+    .catch(err => console.log(err));
+});
 
-// app.get('/standings', (req, res) => {
-//   fetch(`${path}/competitions`, {
-//     method: "GET",
-//     mode: "cors",
-//     headers: {
-//         "x-auth-token" : apiKey,
-//         "Accept" : "application/json",
-//         "Content-Type" : "application/json",
-//     }
-//   })
-//     .then(res => res.json())
-//     .then(data => res.send(data))
-// });
 
-// app.get('/competitions/:id', (req, res) => {
-//   fetch(`${path}/competitions/${req.params.id}`, {
-//     method: "GET",
-//     mode: "cors",
-//     headers: {
-//         "x-auth-token" : apiKey,
-//         "Accept" : "application/json",
-//         "Content-Type" : "application/json",
-//     }
-//   })
-//     .then(res => res.json())
-//     .then(data => res.send(data))
-// });
 
 const port = 5000;
 
