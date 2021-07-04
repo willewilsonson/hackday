@@ -20,8 +20,8 @@ app.get('/leagues/:id', (req, res) => {
     .then(data => res.send(data.teams))
 });
 
-app.get('/matches/:id', (req, res) => {
-  fetch(`${path}/competitions/${req.params.id}/matches`, {
+app.get('/standings/:id', (req, res) => {
+  fetch(`${path}/competitions/${req.params.id}/standings`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -31,22 +31,38 @@ app.get('/matches/:id', (req, res) => {
     }
   })
     .then(res => res.json())
-    .then(data => res.send(data))
+    .then(data => res.send(Object.values({...data.standings})))
 });
 
-app.get('/competitions/:id', (req, res) => {
-  fetch(`${path}/competitions/${req.params.id}`, {
-    method: "GET",
-    mode: "cors",
-    headers: {
-        "x-auth-token" : apiKey,
-        "Accept" : "application/json",
-        "Content-Type" : "application/json",
-    }
-  })
-    .then(res => res.json())
-    .then(data => res.send(data))
-});
+// {Object.values({...data.standings})[3]}
+
+// app.get('/standings', (req, res) => {
+//   fetch(`${path}/competitions`, {
+//     method: "GET",
+//     mode: "cors",
+//     headers: {
+//         "x-auth-token" : apiKey,
+//         "Accept" : "application/json",
+//         "Content-Type" : "application/json",
+//     }
+//   })
+//     .then(res => res.json())
+//     .then(data => res.send(data))
+// });
+
+// app.get('/competitions/:id', (req, res) => {
+//   fetch(`${path}/competitions/${req.params.id}`, {
+//     method: "GET",
+//     mode: "cors",
+//     headers: {
+//         "x-auth-token" : apiKey,
+//         "Accept" : "application/json",
+//         "Content-Type" : "application/json",
+//     }
+//   })
+//     .then(res => res.json())
+//     .then(data => res.send(data))
+// });
 
 const port = 5000;
 
