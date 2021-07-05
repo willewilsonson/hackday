@@ -1,0 +1,107 @@
+.hide {
+  display: none;
+  height: 3rem;
+  overflow: hidden;
+}
+
+.show {
+  height: 3rem;
+  font-size: 1rem;
+  margin: 1rem;
+  display: inline-block;
+}
+
+.show p {
+  border-bottom: 1px solid green;
+}
+
+.card__info-buttons {
+
+}
+
+.card__info-button--show {
+  color: white;
+  background: green;
+  font-size: 1rem;
+  border-top-right-radius: 3%;
+  border-bottom-right-radius: 3%;
+  box-shadow: 3px 3px 3px 3px green;
+  border: 1px solid white;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.card__info-button--show:hover {
+  background: lightgray;
+  color: green;
+  box-shadow: 3px 3px 3px 3px gray;
+  display: inline-block;
+}
+
+.card__info-button--hide {
+  color: white;
+  background: red;
+  font-size: 1rem;
+  border-top-right-radius: 3%;
+  border-bottom-right-radius: 3%;
+  box-shadow: 3px 3px 3px 3px red;
+  border: 1px solid white;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.card__info-button--hide:hover {
+  background: lightgray;
+  color: red;
+  box-shadow: 3px 3px 3px 3px gray;
+  display: inline-block;
+}
+
+.table-header, .team-position {
+  display: flex;
+  flex-direction: row;
+}
+
+.table-header div, .team-position div {
+  flex: 1 0 10%;
+  font-size: 0.75rem;
+  overflow: hidden;
+  height: 3rem;
+  border: 1px solid black;
+  justify-content: center;
+  align-content: center;
+}
+
+.mob-info, .full-view {
+  justify-content: center;
+  align-content: center;
+}
+
+.full-view {
+  display: none;
+}
+
+.table-header div  {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+  .full-view {
+    display: block;
+  }
+}
+
+.team-info-view {
+  border-bottom: green 1px solid;
+  overflow: hidden;
+}
+
+.matches {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.team-position {
+  flex: 3 0 34.12%;
+}

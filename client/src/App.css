@@ -1,0 +1,23 @@
+.body {
+  margin: 0;
+}
+
+.header__title {
+  background: green;
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+  box-shadow: 3px 3px 3px 3px green;
+}
+
+.header__title h1 {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+  box-shadow: 3px 3px 3px 3px green;
+}
+
+.footer {
+  margin-top: 3rem;
+}

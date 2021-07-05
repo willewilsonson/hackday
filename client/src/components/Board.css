@@ -1,0 +1,33 @@
+.team {
+  border: 1px solid;
+}
+
+.cards__card {
+  border: 1px solid green;
+  margin: 0.5rem;
+  box-shadow: 3px 3px 3px 3px gray;
+  width: fit-content;
+  block-size: fit-content;
+  min-height: 200px;
+  min-width: 90%;
+  max-width: 90%;
+  margin: 0.5rem auto;
+
+}
+
+.hide {
+  display: none;
+}
+
+.info-header {
+  font-size: 2rem;
+}
+
+.matchday {
+  display: flex;
+  flex-direction: row;
+}
+
+.matchday-info {
+  flex: 3 0 34.12%;
+}
