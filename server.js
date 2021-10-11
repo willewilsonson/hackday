@@ -1,8 +1,8 @@
 const express = require('express');
 const fetch = require('node-fetch');
 
-const path = 'https://api.football-data.org/v2';
-const apiKey = '26b4bae2e60d4f9398c1558c7900d35a';
+const path = process.env.PATH;
+const apiKey = process.env.API_KEY;
 
 const app = express();
 
