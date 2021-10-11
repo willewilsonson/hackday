@@ -5,7 +5,7 @@ const path = process.env.PATH;
 const apiKey = process.env.API_KEY;
 
 const app = express();
-
+console.log('');
 app.get('/leagues/:id', (req, res) => {
   fetch(`${path}/competitions/${req.params.id}/teams`, {
     method: "GET",
